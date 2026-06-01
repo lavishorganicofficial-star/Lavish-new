@@ -1,0 +1,21 @@
+{
+  "name": "LavishOrganic",
+  "short_name": "LavishOrganic",
+  "description": "Premium certified organic skincare, hair care & wellness products.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FCFBF8",
+  "theme_color": "#334155",
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
