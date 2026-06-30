@@ -76,6 +76,7 @@ const nextConfig: NextConfig = {
       '@/store': `${process.cwd()}/store`,
       '@/app': `${process.cwd()}/app`,
       '@/emails': `${process.cwd()}/emails`,
+      '@/types': `${process.cwd()}/types`,
     };
     return config;
   },
