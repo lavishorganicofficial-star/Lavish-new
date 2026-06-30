@@ -13,7 +13,7 @@ const INFLUENCER_DASHBOARD_PATTERNS = [/^\/influencer\/dashboard/];
 const INFLUENCER_LOGIN_PATTERN = /^\/influencer\/login/;
 const CUSTOMER_LOGIN_PATTERN = /^\/login/;
 
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
   const { supabaseResponse, user, supabase } = await updateSession(request);
 
