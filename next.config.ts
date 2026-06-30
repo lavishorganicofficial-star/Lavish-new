@@ -68,8 +68,16 @@ const nextConfig: NextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  eslint: {
-    ignoreDuringBuilds: true,
+  webpack(config) {
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      '@/components': `${process.cwd()}/components`,
+      '@/lib': `${process.cwd()}/lib`,
+      '@/store': `${process.cwd()}/store`,
+      '@/app': `${process.cwd()}/app`,
+      '@/emails': `${process.cwd()}/emails`,
+    };
+    return config;
   },
 };
 
