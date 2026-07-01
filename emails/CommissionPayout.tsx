@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Html, Head, Body, Container, Section, Text, Heading } from '@react-email/components';
+import { Html, Head, Body, Container, Section, Text, Heading } from 'react-email/components';
 
 export const CommissionPayout = ({ name, amount, reference }: { name: string, amount: number, reference: string }) => (
   <Html>

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Html, Head, Body, Container, Section, Text, Heading, Link } from '@react-email/components';
+import { Html, Head, Body, Container, Section, Text, Heading, Link } from 'react-email/components';
 import type { InfluencerProfile } from '@/types';
 
 export const InfluencerApproved = ({ name, influencer, couponCode }: { name: string, influencer: InfluencerProfile, couponCode: string }) => (

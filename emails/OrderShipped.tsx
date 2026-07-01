@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Html, Head, Body, Container, Section, Text, Heading, Link } from '@react-email/components';
+import { Html, Head, Body, Container, Section, Text, Heading, Link } from 'react-email/components';
 import type { Order } from '@/types';
 
 export const OrderShipped = ({ order }: { order: Order }) => (

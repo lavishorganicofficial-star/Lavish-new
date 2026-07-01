@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Html, Head, Body, Container, Section, Text, Heading, Link } from '@react-email/components';
+import { Html, Head, Body, Container, Section, Text, Heading, Link } from 'react-email/components';
 
 export const ReviewRequest = ({ orderId, productName }: { orderId: string, productName: string }) => (
   <Html>
