@@ -75,6 +75,15 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
   return {
     title: category.meta_title || `${category.name} | LavishOrganic`,
     description: category.meta_description || '',
+    alternates: {
+      canonical: `https://lavishorganic.in/category/${slug}`,
+    },
+    openGraph: {
+      title: category.meta_title || category.name,
+      description: category.meta_description || '',
+      url: `https://lavishorganic.in/category/${slug}`,
+      images: category.image_url ? [{ url: category.image_url }] : [],
+    },
   };
 }
 
@@ -132,8 +141,28 @@ export default async function CategoryPage({ params, searchParams }: CategoryPag
     ? 'Shop our best deals and limited-time offers on premium organic products.'
     : categoryData?.description ?? '';
 
+  const itemListSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: pageTitle,
+    description: pageDesc,
+    url: `https://lavishorganic.in/category/${slug}`,
+    numberOfItems: products?.length ?? 0,
+    itemListElement: products?.map((p, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      url: `https://lavishorganic.in/shop/${p.slug}`,
+      name: p.name,
+      image: p.images?.[0]?.url,
+    })) ?? [],
+  };
+
   return (
     <div className="min-h-screen bg-warm-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
+      />
       {/* ── Hero Section ── */}
       <section className="w-full flex flex-col md:relative md:h-[60vh] md:min-h-[400px] md:max-h-[560px] md:overflow-hidden bg-sage-50">
         

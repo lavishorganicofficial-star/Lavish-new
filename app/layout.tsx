@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import { Cormorant_Garamond, Jost } from 'next/font/google';
 import './globals.css';
 
@@ -100,6 +101,15 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="font-body bg-cream text-charcoal antialiased">
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-RV435264ZX" strategy="afterInteractive" />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-RV435264ZX');
+          `}
+        </Script>
         {children}
         <PWAInstallPrompt />
       </body>

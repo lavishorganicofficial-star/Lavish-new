@@ -32,9 +32,13 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
   return {
     title: `${product.name} | LavishOrganic`,
     description: product.short_description ?? `Buy ${product.name} online at LavishOrganic`,
+    alternates: {
+      canonical: `https://lavishorganic.in/shop/${slug}`,
+    },
     openGraph: {
       title: product.name,
       description: product.short_description ?? '',
+      url: `https://lavishorganic.in/shop/${slug}`,
       images: primaryImage ? [{ url: primaryImage }] : [],
     },
   };
