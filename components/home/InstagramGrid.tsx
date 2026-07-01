@@ -21,7 +21,7 @@ function InstagramIcon({ className }: { className?: string }) {
 const INSTAGRAM_POSTS = [
   {
     id: '1',
-    image: 'https://images.unsplash.com/photo-1570194065650-d99fb4bedf0a?w=400&q=80',
+    image: 'https://res.cloudinary.com/dtrin6lwv/image/upload/v1780119639/ChatGPT_Image_May_30_2026_11_02_40_AM_injxtk.png',
     url: 'https://www.instagram.com/lavishorganic_official/',
     likes: 324,
   },
