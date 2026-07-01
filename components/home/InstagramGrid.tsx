@@ -22,37 +22,37 @@ const INSTAGRAM_POSTS = [
   {
     id: '1',
     image: 'https://images.unsplash.com/photo-1570194065650-d99fb4bedf0a?w=400&q=80',
-    url: 'https://instagram.com/lavishorganic',
+    url: 'https://www.instagram.com/lavishorganic_official/',
     likes: 324,
   },
   {
     id: '2',
     image: 'https://images.unsplash.com/photo-1556909172-54557c7e4fb7?w=400&q=80',
-    url: 'https://instagram.com/lavishorganic',
+    url: 'https://www.instagram.com/lavishorganic_official/',
     likes: 512,
   },
   {
     id: '3',
     image: 'https://images.unsplash.com/photo-1522338242992-e1a54906a8da?w=400&q=80',
-    url: 'https://instagram.com/lavishorganic',
+    url: 'https://www.instagram.com/lavishorganic_official/',
     likes: 289,
   },
   {
     id: '4',
     image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400&q=80',
-    url: 'https://instagram.com/lavishorganic',
+    url: 'https://www.instagram.com/lavishorganic_official/',
     likes: 445,
   },
   {
     id: '5',
     image: 'https://images.unsplash.com/photo-1512207736890-6ffed8a84e8d?w=400&q=80',
-    url: 'https://instagram.com/lavishorganic',
+    url: 'https://www.instagram.com/lavishorganic_official/',
     likes: 671,
   },
   {
     id: '6',
     image: 'https://images.unsplash.com/photo-1601612628452-9e99ced43524?w=400&q=80',
-    url: 'https://instagram.com/lavishorganic',
+    url: 'https://www.instagram.com/lavishorganic_official/',
     likes: 398,
   },
 ];
@@ -72,7 +72,7 @@ export function InstagramGrid() {
             Follow Us
           </p>
           <h2 id="instagram-heading" className="section-title mb-2">
-            @lavishorganic
+            @lavishorganic_official
           </h2>
           <p className="text-charcoal-lighter text-sm font-body">
             Tag us in your photos for a chance to be featured ✨
@@ -123,7 +123,7 @@ export function InstagramGrid() {
           className="text-center mt-8"
         >
           <a
-            href="https://instagram.com/lavishorganic"
+            href="https://www.instagram.com/lavishorganic_official/"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 border border-charcoal text-charcoal font-body text-sm font-medium rounded hover:bg-charcoal hover:text-white transition-colors"
