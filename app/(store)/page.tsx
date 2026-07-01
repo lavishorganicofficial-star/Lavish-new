@@ -6,7 +6,6 @@ import { FeaturedProducts } from '@/components/home/FeaturedProducts';
 import { FlashSale } from '@/components/home/FlashSale';
 import { WhyChooseUs } from '@/components/home/WhyChooseUs';
 import { TestimonialsSection } from '@/components/home/TestimonialsSection';
-import { InstagramGrid } from '@/components/home/InstagramGrid';
 import { NewsletterSection } from '@/components/home/NewsletterSection';
 
 export const metadata: Metadata = {
@@ -121,8 +120,7 @@ export default async function HomePage() {
       {/* 6. Testimonials */}
       <TestimonialsSection reviews={reviews ?? []} />
 
-      {/* 7. Instagram Grid */}
-      <InstagramGrid />
+
 
       {/* 8. Newsletter */}
       <NewsletterSection />
