@@ -126,7 +126,7 @@ export default function CheckoutPage() {
     const { error } = await supabase.auth.signInWithOAuth({
       provider: 'google',
       options: {
-        redirectTo: `${window.location.origin}/auth/callback?next=/checkout`
+        redirectTo: `${window.location.origin}/auth/callback?redirectTo=/checkout`
       }
     });
     if (error) toast.error('Google login failed', error.message);
@@ -388,24 +388,9 @@ export default function CheckoutPage() {
             {/* ENTRY SCREEN: Guest vs Login */}
             {checkoutMode === 'login_prompt' && (
               <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
-                <div className="card-flat p-8 text-center border-2 border-sage-dark/20 bg-sage-50/30">
-                  <h2 className="font-display text-2xl font-medium text-charcoal mb-2">How would you like to continue?</h2>
-                  <p className="text-sm text-charcoal-lighter mb-8">Choose the fastest way to complete your purchase.</p>
-                  
-                  <button 
-                    onClick={() => setCheckoutMode('guest')}
-                    className="w-full bg-sage-dark hover:bg-sage-700 text-white py-4 rounded-xl font-medium text-lg flex items-center justify-center gap-2 transition-all shadow-md hover:shadow-lg"
-                  >
-                    <Zap className="w-5 h-5" />
-                    Continue as Guest
-                  </button>
-                  <p className="text-xs text-charcoal-lighter mt-3 font-medium">No account needed. Fast checkout.</p>
-                </div>
-
-                <div className="flex items-center gap-4 py-2">
-                  <div className="flex-1 h-px bg-sage-light/30"></div>
-                  <span className="text-sm font-medium text-charcoal-lighter uppercase tracking-widest">Already a customer?</span>
-                  <div className="flex-1 h-px bg-sage-light/30"></div>
+                <div className="text-center mb-2">
+                  <h2 className="font-display text-2xl font-medium text-charcoal mb-2">Sign In to Checkout</h2>
+                  <p className="text-sm text-charcoal-lighter">Please login to complete your purchase.</p>
                 </div>
 
                 <div className="card-flat p-8">
