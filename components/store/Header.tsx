@@ -150,7 +150,7 @@ export function Header() {
                 id="header-account-btn"
               >
                 <User className="w-4 h-4" />
-                {role === 'influencer' ? 'Partner Portal' : role === 'admin' ? 'Admin' : 'Account'}
+                {role === 'influencer' ? 'Partner Portal' : 'Account'}
               </Link>
 
               {/* Mobile Menu Toggle */}
@@ -191,7 +191,7 @@ export function Header() {
                 onClick={closeMobileMenu}
                 className="px-3 py-3 font-body text-sm font-medium text-charcoal hover:bg-sage-50 hover:text-sage-dark rounded-md transition-colors"
               >
-                {role === 'influencer' ? 'Partner Portal' : role === 'admin' ? 'Admin Dashboard' : 'My Account'}
+                {role === 'influencer' ? 'Partner Portal' : 'My Account'}
               </Link>
               <Link
                 href="/influencer"

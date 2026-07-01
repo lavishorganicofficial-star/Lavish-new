@@ -174,9 +174,15 @@ export function Footer() {
       {/* Bottom Bar */}
       <div className="border-t border-white/10">
         <div className="container py-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-white/40">
-            © {new Date().getFullYear()} LavishOrganic. All rights reserved.
-          </p>
+          <div className="flex items-center gap-3">
+            <p className="text-xs text-white/40">
+              © {new Date().getFullYear()} LavishOrganic. All rights reserved.
+            </p>
+            <span className="text-white/20 text-xs">|</span>
+            <Link href="/admin/login" className="text-[10px] text-white/30 hover:text-white/80 transition-colors uppercase tracking-wider">
+              Admin Portal
+            </Link>
+          </div>
 
           {/* Payment Badges */}
           <div className="flex items-center gap-2 flex-wrap">
