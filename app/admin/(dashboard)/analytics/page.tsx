@@ -1,12 +1,12 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { BarChart3, Package, Users, Search, TrendingUp, ArrowRight } from 'lucide-react';
+import { BarChart3, Package, Users, Search, TrendingUp, ArrowRight, ExternalLink, Activity, PieChart } from 'lucide-react';
 import { formatCurrency } from '@/lib/utils';
 import Link from 'next/link';
 
 export default function AdminAnalyticsPage() {
-  const [activeTab, setActiveTab] = useState<'traffic' | 'products' | 'referrals' | 'searches'>('traffic');
+  const [activeTab, setActiveTab] = useState<'traffic' | 'products' | 'referrals' | 'searches' | 'ga'>('traffic');
   const [range, setRange] = useState('30d');
   
   const [summary, setSummary] = useState<any>(null);
@@ -40,6 +40,7 @@ export default function AdminAnalyticsPage() {
     { id: 'products', label: 'Product Performance', icon: Package },
     { id: 'referrals', label: 'Referrals (UTM)', icon: Users },
     { id: 'searches', label: 'Search Queries', icon: Search },
+    { id: 'ga', label: 'Google Analytics', icon: ExternalLink },
   ] as const;
 
   if (loading) {
@@ -204,6 +205,71 @@ export default function AdminAnalyticsPage() {
             <Search className="w-12 h-12 text-sage-light mx-auto mb-4" />
             <h3 className="text-lg font-medium text-charcoal mb-2">Search Analytics Active</h3>
             <p className="text-charcoal-lighter">Search queries are being logged to the search_analytics table. Add detailed search analytics views in the next update.</p>
+          </div>
+        )}
+
+        {/* GOOGLE ANALYTICS */}
+        {activeTab === 'ga' && (
+          <div className="p-8">
+            <div className="max-w-2xl mx-auto text-center mb-10">
+              <div className="w-16 h-16 bg-[#F8FAFC] border border-gray-100 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-sm">
+                <PieChart className="w-8 h-8 text-[#E37400]" />
+              </div>
+              <h3 className="font-display text-2xl font-medium text-charcoal mb-2">Google Analytics Integration</h3>
+              <p className="text-charcoal-lighter text-sm">
+                Your store is successfully connected to Google Analytics (Tag: G-RV435264ZX). Access your real-time reporting dashboards directly through the quick links below.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-4 max-w-3xl mx-auto">
+              {/* Main Dashboard */}
+              <a 
+                href="https://analytics.google.com/analytics/web/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="card p-6 border-gray-100 hover:border-sage-dark/30 hover:shadow-md transition-all group flex items-start gap-4"
+              >
+                <div className="w-12 h-12 rounded-full bg-sage-50 text-sage-dark flex items-center justify-center flex-shrink-0 group-hover:bg-sage-dark group-hover:text-white transition-colors">
+                  <BarChart3 className="w-6 h-6" />
+                </div>
+                <div>
+                  <h4 className="font-medium text-charcoal mb-1 flex items-center gap-2">
+                    Full GA4 Dashboard
+                    <ExternalLink className="w-3.5 h-3.5 text-gray-400 group-hover:text-sage-dark" />
+                  </h4>
+                  <p className="text-xs text-charcoal-lighter leading-relaxed">
+                    View your complete Google Analytics workspace including user acquisition, engagement, and monetization reports.
+                  </p>
+                </div>
+              </a>
+
+              {/* Realtime */}
+              <a 
+                href="https://analytics.google.com/analytics/web/#/p452932338/realtime/overview" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="card p-6 border-gray-100 hover:border-sage-dark/30 hover:shadow-md transition-all group flex items-start gap-4"
+              >
+                <div className="w-12 h-12 rounded-full bg-sage-50 text-sage-dark flex items-center justify-center flex-shrink-0 group-hover:bg-sage-dark group-hover:text-white transition-colors">
+                  <Activity className="w-6 h-6" />
+                </div>
+                <div>
+                  <h4 className="font-medium text-charcoal mb-1 flex items-center gap-2">
+                    Realtime Overview
+                    <ExternalLink className="w-3.5 h-3.5 text-gray-400 group-hover:text-sage-dark" />
+                  </h4>
+                  <p className="text-xs text-charcoal-lighter leading-relaxed">
+                    Monitor activity as it happens. See where your current active users are coming from and what pages they are viewing.
+                  </p>
+                </div>
+              </a>
+            </div>
+
+            <div className="mt-8 text-center bg-gray-50 rounded-lg p-4 max-w-3xl mx-auto border border-gray-100">
+               <p className="text-xs text-charcoal-lighter">
+                 <strong>Note:</strong> Advanced native charts can be embedded here in the future using the <span className="font-mono bg-white px-1 py-0.5 rounded border border-gray-200">@google-analytics/data</span> API by providing a GCP Service Account key.
+               </p>
+            </div>
           </div>
         )}
 
